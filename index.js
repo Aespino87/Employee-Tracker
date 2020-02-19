@@ -1,22 +1,19 @@
 const inquirer = require('inquirer');
 const db = require('./database');
+/// Multiple Variables need to use the same file.
 const { addEmployee, removeEmployee, updateEmployeeManager, updateEmployeeRole, displayAllEmployees, displayAllEmployeesByDepartment, displayAllEmployeesByManager} = require('./controllers/employee');
 const { addDepartment, removeDepartment, displayAllDepartments} = require('./controllers/department');
 const { addRole, removeRole, displayAllRoles } = require('./controllers/role');
-const {
-  displayTotalBudget,
-  displayTotalDepartmentBudget
-} = require('./controllers/budget');
+const {displayTotalBudget, displayTotalDepartmentBudget} = require('./controllers/budget');
 const { displayBanner } = require('./utils/banner');
-
+/// This runs figlet to display the Banner and the App
 async function init() {
   db.dropAndInit();
   await displayBanner();
   await app();
 }
-
+/// This Takes in the responses from the users inputs in the CLI
 async function app() {
-  console.log('\n');
   const answer = await inquirer.prompt([
     {
       type: 'list',
@@ -42,69 +39,69 @@ async function app() {
       ]
     }
   ]);
-
+// Setting up conditions for when users select an option from the prompt it runs and waits for a response from selected function - https://www.youtube.com/watch?v=Z6O_XdfCBEo - refrenced this video on how to use switch case statemnets
   switch (answer.action.toLowerCase()) {
-    case 'view all employees':
+    case "View all Employees":
       await displayAllEmployees();
       app();
       break;
-    case 'view all employees by department':
+    case "View all Employees by Department":
       await displayAllEmployeesByDepartment();
       app();
       break;
-    case 'view all employees by manager':
+    case "View all Employees by Manager":
       await displayAllEmployeesByManager();
       app();
       break;
-    case 'view all roles':
+    case "View all Roles":
       await displayAllRoles();
       app();
       break;
-    case 'view all departments':
+    case "View all Departments":
       await displayAllDepartments();
       app();
       break;
-    case 'add employee':
+    case "Add Employee":
       await addEmployee();
       app();
       break;
-    case 'remove employee':
+    case "Remove Employee":
       await removeEmployee();
       app();
       break;
-    case 'update employee manager':
+    case "Update Employee Manager":
       await updateEmployeeManager();
       app();
       break;
-    case 'update employee role':
+    case "Update Employee Role":
       await updateEmployeeRole();
       app();
       break;
-    case 'update employee department':
+    case "Update employee department":
       await updateEmployeeDepartment();
       app();
       break;
-    case 'add department':
+    case "Add Department":
       await addDepartment();
       app();
       break;
-    case 'remove department':
+    case "Remove Department":
       await removeDepartment();
       app();
       break;
-    case 'add role':
+    case "Add Role":
       await addRole();
       app();
       break;
-    case 'remove role':
+    case "Remove Role":
       await removeRole();
       app();
       break;
-    case 'view total budget':
+    case "View Total Budget":
       await displayTotalBudget();
       app();
       break;
-    case 'view total department budget':
+    case "View Total Department Budget":
       await displayTotalDepartmentBudget();
       app();
       break;

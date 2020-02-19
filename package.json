@@ -1,0 +1,29 @@
+{
+  "name": "employee-tracker",
+  "version": "1.0.0",
+  "description": "A employment manage sysytem using a CLI with node.js, inquirer, and MySql.",
+  "main": "index.js",
+  "dependencies": {
+    "figlet": "^1.2.4",
+    "inquirer": "^7.0.4",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aespino87/Employee-Tracker.git"
+  },
+  "keywords": [
+    "Employee",
+    "Tracker"
+  ],
+  "author": "Adam Espino",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Aespino87/Employee-Tracker/issues"
+  },
+  "homepage": "https://github.com/Aespino87/Employee-Tracker#readme"
+}
