@@ -4,6 +4,8 @@
   "description": "A employment manage sysytem using a CLI with node.js, inquirer, and MySql.",
   "main": "index.js",
   "dependencies": {
+    "cfonts": "^2.8.0",
+    "console.table": "^0.10.0",
     "figlet": "^1.2.4",
     "inquirer": "^7.0.4",
     "mysql": "^2.18.1"
